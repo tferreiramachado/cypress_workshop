@@ -11,3 +11,10 @@ jobs:
               uses: cypress-io/github-action@v6
               with:
                 browser: chrome
+
+            - name: Upload Cypress Test Screenshots
+              uses: actions/upload-artifact@v4
+              if: failure()
+              with:
+                name: cypress-screenshots
+                path: cypress/screenshots
