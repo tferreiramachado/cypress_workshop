@@ -1,0 +1,13 @@
+name: E2E Cypress Tests
+on: [push]
+jobs:
+    cypress-run:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Run Cypress Tests
+              uses: cypress-io/github-action@v6
+              with:
+                browser: chrome
